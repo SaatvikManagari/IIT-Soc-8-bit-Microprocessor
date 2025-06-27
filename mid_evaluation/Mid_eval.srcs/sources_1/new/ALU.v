@@ -98,19 +98,20 @@ module final_out
     output signed [7:0] out
 );
 wire [7:0] a1_,a2_,a3_,a4_,a5_,a6_,a7_,a8_,a9_,a10_,a11_;
-and_8bit b1(a1,sel[0],a1_);
-and_8bit b2(a2,sel[1],a2_);
-and_8bit b3(a3,sel[2],a3_);
-and_8bit b4(a4,sel[3],a4_);
-and_8bit b5(a5,sel[4],a5_);
-and_8bit b6(a6,sel[5],a6_);
-and_8bit b7(a7,sel[6],a7_);
-and_8bit b8(a8,sel[7],a8_);
-and_8bit b9(a9,sel[8],a9_);
-and_8bit b10(a10,sel[9],a10_);
-and_8bit b11(a11,sel[10],a11_);
+and_8bit b1(.in(a1),.x(sel[0]),.out(a1_));
+and_8bit b2(.in(a2),.x(sel[1]),.out(a2_));
+and_8bit b3(.in(a3),.x(sel[2]),.out(a3_));
+and_8bit b4(.in(a4),.x(sel[3]),.out(a4_));
+and_8bit b5(.in(a5),.x(sel[4]),.out(a5_));
+and_8bit b6(.in(a6),.x(sel[5]),.out(a6_));
+and_8bit b7(.in(a7),.x(sel[6]),.out(a7_));
+and_8bit b8(.in(a8),.x(sel[7]),.out(a8_));
+and_8bit b9(.in(a9),.x(sel[8]),.out(a9_));
+and_8bit b10(.in(a10),.x(sel[9]),.out(a10_));
+and_8bit b11(.in(a11),.x(sel[10]),.out(a11_));
 
-or(out,a1_,a2_,a3_,a4_,a5_,a6_,a7_,a8_,a9_,a10_,a11_);
+assign out = a1_ | a2_ | a3_ | a4_ | a5_ | a6_ | a7_ | a8_ | a9_ | a10_ | a11_;
+
 
 
 endmodule
@@ -124,10 +125,10 @@ module alu_selector
 (
     input [7:0] instruct, address,
     input signed [7:0] data1,data2,
-   // output signed [7:0] ans_add,ans_sub,ans_mul,ans_div,ans_comp,ans_equal,ans_right,ans_left,ans_and,ans_or,ans_not,
+   //inout signed [7:0] ans_add,ans_sub,ans_mul,ans_div,ans_comp,ans_equal,ans_right,ans_left,ans_and,ans_or,ans_not,
     output signed [7:0] ans,
-    output [2:0] wr1,wr2,
-    output [1:0] dr
+   output [2:0] wr1,wr2,
+   output [1:0] dr
     );
 
 wire [2:0] t;
@@ -191,7 +192,24 @@ not_op opnot(.a(bn1),.ans(ans_not));
 final_out out_8bit(.a1(ans_add),.a2(ans_sub),.a3(ans_mul),.a4(ans_div),.a5(ans_comp),.a6(ans_equal),.a7(ans_right),.a8(ans_left),.a9(ans_and),.a10(ans_or),.a11(ans_not),.sel(ans_sel),.out(ans));
 
 
+//wire signed [7:0] ans_add_selected,ans_sub_selected;//,ans_mul_selected,ans_div_selected,and_comp_selected,ans_equal_selected,ans_right_selected,ans_left_selected,ans_and_selected,ans_or_selected,ans_not_selected;
+//assign ans_add_selected = ans_add & {8{ans_sel[0]}};
+//assign ans_sub_selected = ans_sub & {8{ans_sel[1]}};
+////assign ans_mul_selected = ans_mul & {8{ans_sel[2]}};
+////assign ans_div_selected = ans_div & {8{ans_sel[3]}};
+////assign ans_comp_selected = ans_comp & {8{ans_sel[4]}};
+////assign ans_eq_selected = ans_equal & {8{ans_sel[5]}};
+////assign ans_br_selected = ans_right & {8{ans_sel[6]}};
+////assign ans_bl_selected = ans_left & {8{ans_sel[7]}};
+////assign ans_or_selected = ans_or & {8{ans_sel[8]}};
+////assign ans_and_selected = ans_and & {8{ans_sel[9]}};
+////assign ans_not_selected = ans_not & {8{ans_sel[10]}};
+
+//assign ans = ans_add_selected|ans_sub_selected;//|ans_and_selected|ans_or_selected|ans_bl_selected|ans_br_selected|ans_eq_selected|ans_comp_selected|ans_div_selected|ans_mul_selected|ans_sub_selected;
 
 endmodule
+
+
+
 
 
