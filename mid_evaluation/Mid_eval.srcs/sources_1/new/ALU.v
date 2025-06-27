@@ -97,7 +97,7 @@ module final_out
     input [10:0] sel,
     output signed [7:0] out
 );
-wire [7:0] a1_,a2_,a3_,a4_,a5_,a6_,a7_,a8_,a8_,a9_,a10_,a11_;
+wire [7:0] a1_,a2_,a3_,a4_,a5_,a6_,a7_,a8_,a9_,a10_,a11_;
 and_8bit b1(a1,sel[0],a1_);
 and_8bit b2(a2,sel[1],a2_);
 and_8bit b3(a3,sel[2],a3_);
@@ -191,20 +191,6 @@ not_op opnot(.a(bn1),.ans(ans_not));
 final_out out_8bit(.a1(ans_add),.a2(ans_sub),.a3(ans_mul),.a4(ans_div),.a5(ans_comp),.a6(ans_equal),.a7(ans_right),.a8(ans_left),.a9(ans_and),.a10(ans_or),.a11(ans_not),.sel(ans_sel),.out(ans));
 
 
-//wire signed [7:0] ans_add_selected,ans_sub_selected;//,ans_mul_selected,ans_div_selected,and_comp_selected,ans_equal_selected,ans_right_selected,ans_left_selected,ans_and_selected,ans_or_selected,ans_not_selected;
-//assign ans_add_selected = ans_add & {8{ans_sel[0]}};
-//assign ans_sub_selected = ans_sub & {8{ans_sel[1]}};
-////assign ans_mul_selected = ans_mul & {8{ans_sel[2]}};
-////assign ans_div_selected = ans_div & {8{ans_sel[3]}};
-////assign ans_comp_selected = ans_comp & {8{ans_sel[4]}};
-////assign ans_eq_selected = ans_equal & {8{ans_sel[5]}};
-////assign ans_br_selected = ans_right & {8{ans_sel[6]}};
-////assign ans_bl_selected = ans_left & {8{ans_sel[7]}};
-////assign ans_or_selected = ans_or & {8{ans_sel[8]}};
-////assign ans_and_selected = ans_and & {8{ans_sel[9]}};
-////assign ans_not_selected = ans_not & {8{ans_sel[10]}};
-
-//assign ans = ans_add_selected|ans_sub_selected;//|ans_and_selected|ans_or_selected|ans_bl_selected|ans_br_selected|ans_eq_selected|ans_comp_selected|ans_div_selected|ans_mul_selected|ans_sub_selected;
 
 endmodule
 
