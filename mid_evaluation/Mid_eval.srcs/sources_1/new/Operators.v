@@ -32,7 +32,7 @@ module divider (
 endmodule
 
 
-// ADDER AND SUBTRACTER
+// Carry Look Ahead Adder
 module cla4 (
     input  [3:0] A, B,
     input        C0,
@@ -97,6 +97,40 @@ module adder_subtractor_8bit (
     // Overflow detection for signed numbers
     assign Overflow = (A[7] ^ B_in[7] ^ mode) & ~(A[7] ^ S[7]);
 endmodule
+
+// 8-bit Unsigned Adder using two 4-bit CLAs
+module adder_8bit (
+    input  [7:0] A,
+    input  [7:0] B,
+    output [7:0] S,
+    output       Cout
+);
+    wire [3:0] S1, S2;
+    wire       C1, C4;
+
+    // Lower 4-bit CLA
+    cla4 cla_lower (
+        .A(A[3:0]),
+        .B(B[3:0]),
+        .C0(1'b0),
+        .S(S1),
+        .C4(C1)
+    );
+
+    // Upper 4-bit CLA
+    cla4 cla_upper (
+        .A(A[7:4]),
+        .B(B[7:4]),
+        .C0(C1),
+        .S(S2),
+        .C4(C4)
+    );
+
+    assign S = {S2, S1};
+    assign Cout = C4;  // Final carry-out
+
+endmodule
+
 //Multiplier
 
 module multiplier (
@@ -168,6 +202,70 @@ module not_op (
 );
    
     assign ans =( ~a);
+endmodule
+
+module logical_left_shift (
+    input  [7:0] data_in,
+    output [7:0] data_out
+);
+    wire [7:0] result;
+
+    // Instantiate multiplier with multiplier factor = 2
+    multiplier mul (
+        .a(data_in),
+        .b(8'd2),
+        .product(result)
+    );
+
+    assign data_out = result;
+endmodule
+
+module logical_right_shift (
+    input  [7:0] data_in,
+    output [7:0] data_out
+);
+    wire [7:0] result;
+
+    // Instantiate divider with divisor = 2
+    divider div (
+        .dividend(data_in),
+        .divisor(8'd2),
+        .quotient(result)
+    );
+
+    assign data_out = result;
+endmodule
+
+module arithmetic_left_shift (
+    input  signed [7:0] data_in,
+    output       [7:0] data_out
+);
+    wire signed [7:0] result;
+
+    // Use multiplier module to simulate arithmetic left shift
+    multiplier mul (
+        .a(data_in),
+        .b(8'sd2),  // signed 2
+        .product(result)
+    );
+
+    assign data_out = result;
+endmodule
+
+module arithmetic_right_shift (
+    input  signed [7:0] data_in,
+    output       [7:0] data_out
+);
+    wire signed [7:0] result;
+
+    // Use divider module to simulate arithmetic right shift
+    divider div (
+        .dividend(data_in),
+        .divisor(8'sd2),  // signed 2
+        .quotient(result)
+    );
+
+    assign data_out = result;
 endmodule
 
 
