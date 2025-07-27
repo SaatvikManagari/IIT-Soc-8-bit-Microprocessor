@@ -19,35 +19,47 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-module dec1x11(
+module dec1x17(
     input  x,
-    input [3:0] sel,
-    output a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,
-    output [10:0] ans
+    input [4:0] sel,
+    output a1,a2,a3,a4,a5,a6,a7,a8,a9,a10,a11,a12,a13,a14,a15,ua1,ua2,
+    output [14:0] ans
 );
 
 assign a1 =x &(sel[0])&(~sel[1])&(~sel[2])&(~sel[3]);
+assign ua1 =x &(sel[0])&(~sel[1])&(~sel[2])&(~sel[3])&(sel[4]);
 assign a2 =x &(~sel[0])&(sel[1])&(~sel[2])&(~sel[3]);
+assign ua2 =x &(sel[0])&(~sel[1])&(~sel[2])&(~sel[3])&(sel[4]);
 assign a3 =x &(sel[0])&(sel[1])&(~sel[2])&(~sel[3]);
 assign a4 =x &(~sel[0])&(~sel[1])&(sel[2])&(~sel[3]);
 assign a5 =x &(sel[0])&(~sel[1])&(sel[2])&(~sel[3]);
 assign a6 =x &(~sel[0])&(sel[1])&(sel[2])&(~sel[3]);
-assign a7 =x &(~sel[0])&(~sel[1])&(~sel[2])&(sel[3]);
-assign a8 =x &(sel[0])&(~sel[1])&(~sel[2])&(sel[3]);
-assign a9 =x &(~sel[0])&(sel[1])&(~sel[2])&(sel[3]);
-assign a10 =x &(sel[0])&(sel[1])&(~sel[2])&(sel[3]);
-assign a11 =x &(~sel[0])&(~sel[1])&(sel[2])&(sel[3]);
+assign a7 =x &(sel[0])&(sel[1])&(sel[2])&(~sel[3]);
+assign a8 =x &(~sel[0])&(~sel[1])&(~sel[2])&(sel[3]);
+assign a9 =x &(sel[0])&(~sel[1])&(~sel[2])&(sel[3]);
+assign a10 =x &(~sel[0])&(sel[1])&(~sel[2])&(sel[3]);
+assign a11 =x &(sel[0])&(sel[1])&(~sel[2])&(sel[3]);
+assign a12 =x &(sel[0])&(sel[1])&(sel[2])&(sel[3]);
+assign a13 =x &(sel[0])&(~sel[1])&(sel[2])&(sel[3]);
+assign a14 =x &(~sel[0])&(sel[1])&(sel[2])&(sel[3]);
+assign a15 =x &(sel[0])&(sel[1])&(sel[2])&(sel[3]);
 assign ans[0] = (sel[0])&(~sel[1])&(~sel[2])&(~sel[3]);
 assign ans[1] =(~sel[0])&(sel[1])&(~sel[2])&(~sel[3]);
 assign ans[2] =(sel[0])&(sel[1])&(~sel[2])&(~sel[3]);
 assign ans[3] =(~sel[0])&(~sel[1])&(sel[2])&(~sel[3]);
 assign ans[4] =(sel[0])&(~sel[1])&(sel[2])&(~sel[3]);
 assign ans[5] =(~sel[0])&(sel[1])&(sel[2])&(~sel[3]);
-assign ans[6] =(~sel[0])&(~sel[1])&(~sel[2])&(sel[3]);
-assign ans[7] =(sel[0])&(~sel[1])&(~sel[2])&(sel[3]);
-assign ans[8] =(~sel[0])&(sel[1])&(~sel[2])&(sel[3]);
-assign ans[9] =(sel[0])&(sel[1])&(~sel[2])&(sel[3]);
-assign ans[10] =(~sel[0])&(~sel[1])&(sel[2])&(sel[3]);
+assign ans[6] =(sel[0])&(sel[1])&(sel[2])&(~sel[3]);
+assign ans[7] =(~sel[0])&(~sel[1])&(~sel[2])&(sel[3]);
+assign ans[8] =(sel[0])&(~sel[1])&(~sel[2])&(sel[3]);
+assign ans[9] =(~sel[0])&(sel[1])&(~sel[2])&(sel[3]);
+assign ans[10] =(sel[0])&(sel[1])&(~sel[2])&(sel[3]);
+assign ans[11] =(~sel[0])&(~sel[1])&(sel[2])&(sel[3]);
+assign ans[12] =(sel[0])&(~sel[1])&(sel[2])&(sel[3]);
+assign ans[13] =(~sel[0])&(sel[1])&(sel[2])&(sel[3]);
+assign ans[14] =(sel[0])&(sel[1])&(sel[2])&(sel[3]);
+assign ans[15] =(sel[0])&(~sel[1])&(~sel[2])&(~sel[3])&(sel[4]);
+assign ans[16] =(sel[0])&(~sel[1])&(~sel[2])&(~sel[3])&(sel[4]);
 
 endmodule
 
@@ -62,15 +74,15 @@ module functionselector_8bit(
     );
     
 
-//dec1x11 bit0 (x[0],sel,a1[0],a2[0],a3[0],a4[0],a5[0],a6[0],a7[0],a8[0],a9[0],a10[0],a11[0]);
-dec1x11 bit1(.x(x[0]),.sel(sel),.a1(a1[0]),.a2(a2[0]),.a3(a3[0]),.a4(a4[0]),.a5(a5[0]),.a6(a6[0]),.a7(a7[0]),.a8(a8[0]),.a9(a9[0]),.a10(a10[0]),.a11(a11[0]),.ans(ans));
-dec1x11 bit2(.x(x[1]),.sel(sel),.a1(a1[1]),.a2(a2[1]),.a3(a3[1]),.a4(a4[1]),.a5(a5[1]),.a6(a6[1]),.a7(a7[1]),.a8(a8[1]),.a9(a9[1]),.a10(a10[1]),.a11(a11[1]));
-dec1x11 bit3(.x(x[2]),.sel(sel),.a1(a1[2]),.a2(a2[2]),.a3(a3[2]),.a4(a4[2]),.a5(a5[2]),.a6(a6[2]),.a7(a7[2]),.a8(a8[2]),.a9(a9[2]),.a10(a10[2]),.a11(a11[2]));
-dec1x11 bit4(.x(x[3]),.sel(sel),.a1(a1[3]),.a2(a2[3]),.a3(a3[3]),.a4(a4[3]),.a5(a5[3]),.a6(a6[3]),.a7(a7[3]),.a8(a8[3]),.a9(a9[3]),.a10(a10[3]),.a11(a11[3]));
-dec1x11 bit5(.x(x[4]),.sel(sel),.a1(a1[4]),.a2(a2[4]),.a3(a3[4]),.a4(a4[4]),.a5(a5[4]),.a6(a6[4]),.a7(a7[4]),.a8(a8[4]),.a9(a9[4]),.a10(a10[4]),.a11(a11[4]));
-dec1x11 bit6(.x(x[5]),.sel(sel),.a1(a1[5]),.a2(a2[5]),.a3(a3[5]),.a4(a4[5]),.a5(a5[5]),.a6(a6[5]),.a7(a7[5]),.a8(a8[5]),.a9(a9[5]),.a10(a10[5]),.a11(a11[5]));
-dec1x11 bit7(.x(x[6]),.sel(sel),.a1(a1[6]),.a2(a2[6]),.a3(a3[6]),.a4(a4[6]),.a5(a5[6]),.a6(a6[6]),.a7(a7[6]),.a8(a8[6]),.a9(a9[6]),.a10(a10[6]),.a11(a11[6]));
-dec1x11 bit8(.x(x[7]),.sel(sel),.a1(a1[7]),.a2(a2[7]),.a3(a3[7]),.a4(a4[7]),.a5(a5[7]),.a6(a6[7]),.a7(a7[7]),.a8(a8[7]),.a9(a9[7]),.a10(a10[7]),.a11(a11[7]));
+//dec1x17 bit0 (x[0],sel,a1[0],a2[0],a3[0],a4[0],a5[0],a6[0],a7[0],a8[0],a9[0],a10[0],a11[0]);
+    dec1x17 bit1(.x(x[0]),.sel(sel),.a1(a1[0]),.a2(a2[0]),.a3(a3[0]),.a4(a4[0]),.a5(a5[0]),.a6(a6[0]),.a7(a7[0]),.a8(a8[0]),.a9(a9[0]),.a10(a10[0]),.a11(a11[0]));
+dec1x17 bit2(.x(x[1]),.sel(sel),.a1(a1[1]),.a2(a2[1]),.a3(a3[1]),.a4(a4[1]),.a5(a5[1]),.a6(a6[1]),.a7(a7[1]),.a8(a8[1]),.a9(a9[1]),.a10(a10[1]),.a11(a11[1]));
+dec1x17 bit3(.x(x[2]),.sel(sel),.a1(a1[2]),.a2(a2[2]),.a3(a3[2]),.a4(a4[2]),.a5(a5[2]),.a6(a6[2]),.a7(a7[2]),.a8(a8[2]),.a9(a9[2]),.a10(a10[2]),.a11(a11[2]));
+dec1x17 bit4(.x(x[3]),.sel(sel),.a1(a1[3]),.a2(a2[3]),.a3(a3[3]),.a4(a4[3]),.a5(a5[3]),.a6(a6[3]),.a7(a7[3]),.a8(a8[3]),.a9(a9[3]),.a10(a10[3]),.a11(a11[3]));
+dec1x17 bit5(.x(x[4]),.sel(sel),.a1(a1[4]),.a2(a2[4]),.a3(a3[4]),.a4(a4[4]),.a5(a5[4]),.a6(a6[4]),.a7(a7[4]),.a8(a8[4]),.a9(a9[4]),.a10(a10[4]),.a11(a11[4]));
+dec1x17 bit6(.x(x[5]),.sel(sel),.a1(a1[5]),.a2(a2[5]),.a3(a3[5]),.a4(a4[5]),.a5(a5[5]),.a6(a6[5]),.a7(a7[5]),.a8(a8[5]),.a9(a9[5]),.a10(a10[5]),.a11(a11[5]));
+dec1x17 bit7(.x(x[6]),.sel(sel),.a1(a1[6]),.a2(a2[6]),.a3(a3[6]),.a4(a4[6]),.a5(a5[6]),.a6(a6[6]),.a7(a7[6]),.a8(a8[6]),.a9(a9[6]),.a10(a10[6]),.a11(a11[6]));
+dec1x17 bit8(.x(x[7]),.sel(sel),.a1(a1[7]),.a2(a2[7]),.a3(a3[7]),.a4(a4[7]),.a5(a5[7]),.a6(a6[7]),.a7(a7[7]),.a8(a8[7]),.a9(a9[7]),.a10(a10[7]),.a11(a11[7]));
 endmodule
 
 module and_8bit
