@@ -212,7 +212,7 @@ not_op opnot(.a(bn1),.ans(ans_not));
 
 
 
-final_out out_8bit(.a1(ans_add),.a2(ans_sub),.a3(ans_mul),.a4(ans_div),.a5(ans_comp),.a6(ans_equal),.a7(ans_right),.a8(ans_left),.a9(ans_and),.a10(ans_or),.a11(ans_not),.sel(ans_sel),.out(ans));
+    final_out out_8bit(.a1(ans_add),.a2(ans_sub),.a3(ans_mul),.a4(ans_div),.a5(ans_comp),.a6(ans_equal),.a7(ans_aright),.a8(ans_aleft),.a9(ans_i),.a10(ans_d),.a11(ans_or),.a12(ans_and),.a13(ans_not),.a14(ans_lright),.a15(ans_lleft),.ua1(ans_uadd),.ua2(ans_usub).a.sel(ans_sel),.out(ans));
 
 
 //wire signed [7:0] ans_add_selected,ans_sub_selected;//,ans_mul_selected,ans_div_selected,and_comp_selected,ans_equal_selected,ans_right_selected,ans_left_selected,ans_and_selected,ans_or_selected,ans_not_selected;
