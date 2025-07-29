@@ -142,18 +142,14 @@ endmodule
 module alu_selector
 (
     input [7:0] instruct, address,
-    input signed [7:0] data1,data2,
+    input [7:0] data1,data2,
    //inout signed [7:0] ans_add,ans_sub,ans_mul,ans_div,ans_comp,ans_equal,ans_right,ans_left,ans_and,ans_or,ans_not,
-    output signed [7:0] ans,
+    output [7:0] ans,
    output [2:0] wr1,wr2,
    output [1:0] dr
     );
 
-wire [2:0] t;
-assign t[0] = instruct[6];
-assign t[1] = instruct[6];
-assign t[2] = instruct[6];
-assign wr1 = address[7:5] & (~t) | instruct[5:3]&(t);
+assign wr1 = address[7:5];
 assign wr2 = address[4:2];
 assign dr = address [1:0];
 
@@ -161,7 +157,7 @@ wire [3:0] sel;
 assign sel[0] = instruct[0];
 assign sel[1] = instruct[1];
 assign sel[2] = instruct[2];
-assign sel[3] = instruct[3]&(~instruct[6]);
+assign sel[3] = instruct[3];
 wire [7:0] data2_and, data2_process;
 wire constant,constant_not;
 assign constant = instruct[6];
@@ -187,17 +183,21 @@ assign address_checker[6] = address[6] & constant;
 assign address_checker[7] = address[7] & constant;
 assign data2_process = data2_and | address_checker;
 
-wire signed [7:0] add1,sub1,mul1,div1,comp1,eq1,br1,bl1,bo1,ba1,bn1,add2,sub2,mul2,div2,comp2,eq2,br2,bl2,bo2,ba2;
-wire [10:0] ans_sel;
+    wire [7:0] add1,sub1,mul1,div1,comp1,eq1,bar1,bal1,i1,d1,bo1,ba1,bn1,blr1,bll1,uadd1,usub1,add2,sub2,mul2,div2,comp2,eq2,bar2,bal2,i2,d2bo2,ba2,blr2,bll2,uadd2,usub2;
+    wire [16:0] ans_sel;
 //wire signed [7:0] ans_add,ans_sub,ans_mul,ans_div,and_comp,ans_equal,ans_right,ans_left,ans_and,ans_or,ans_not;
-wire signed [7:0] ans_add,ans_sub,ans_mul,ans_div,ans_comp,ans_equal,ans_right,ans_left,ans_and,ans_or,ans_not;
-functionselector_8bit data_1(.x(data1),.sel(sel),.a1(add1),.a2(sub1),.a3(mul1),.a4(div1),.a5(comp1),.a6(eq1),.a7(br1),.a8(bl1),.a9(bo1),.a10(ba1),.a11(bn1),.ans(ans_sel));
-functionselector_8bit data_2(.x(data2_process),.sel(sel),.a1(add2),.a2(sub2),.a3(mul2),.a4(div2),.a5(comp2),.a6(eq2),.a7(br2),.a8(bl2),.a9(bo2),.a10(ba2),.a11(bn2));
+    wire [7:0] ans_add,ans_sub,ans_mul,ans_div,ans_comp,ans_equal,ans_aright,ans_aleft,ans_i,ans_d,ans_and,ans_or,ans_not,ans_lright,ans_lleft,ans_uadd,ans_usub;
+    functionselector_8bit data_1(.x(data1),.sel(sel),.a1(add1),.a2(sub1),.a3(mul1),.a4(div1),.a5(comp1),.a6(eq1),.a7(bar1),.a8(bal1),.a9(i1),.a10(d1),.a11(bo1),.a12(ba1),.a13(bn1),.a14(blr1),.a15(bll1).ans(ans_sel));
+    functionselector_8bit data_2(.x(data2_process),.sel(sel),.a1(add2),.a2(sub2),.a3(mul2),.a4(div2),.a5(comp2),.a6(eq2),.a7(bar2),.a8(bal2),.a9(i2),.a10(d2),.a11(bo2),.a12(ba2),.a14(blr2),.a15(bll2));
 
 
 
 adder_subtractor_8bit add(.A(add1),.B(add2),.S(ans_add),.mode(0));
 adder_subtractor_8bit sub(.A(sub1),.B(sub2),.S(ans_sub),.mode(1));
+    adder_8bit uadd(.A(uadd1),.B(uadd2),.S(ans_uadd),.);
+    sub_8bit usub(.A(usub1),.B(usub2),.S(ans_usub));
+    incrementer_8bit i(.A(i1),.B(i2),.S(ans_i));
+    decrement_8bit d(.A(d1),.B(d2),.S(ans_d));
 multiplier mul(.a(mul1),.b(mul2),.product(ans_mul));
 divider div(.dividend(div1),.divisor(div2),.quotient(ans_div));
 comp comparision(.a(comp1),.b(comp2),.ans(ans_comp));
@@ -205,6 +205,11 @@ eq equalto(.a(eq1),.b(eq2),.ans(ans_equal));
 and_op and_op1(.a(ba1),.b(ba2),.ans(ans_and));
 or_op opor(.a(bo1),.b(bo2),.ans(ans_or));
 not_op opnot(.a(bn1),.ans(ans_not));
+    logical_left_shift lls(.a(bll1),.b(bll2),.product(ans_lleft));
+    logical_right_shift lrs(.a(blr1),.b(blr2),.product(ans_lright));
+    arithmetic_left_shift als(.a(bal1),.b(bal2),.product(ans_aleft));
+    arithmetic_right_shift als(.a(bar1),.b(bar2),.product(ans_aright));
+
 
 
 final_out out_8bit(.a1(ans_add),.a2(ans_sub),.a3(ans_mul),.a4(ans_div),.a5(ans_comp),.a6(ans_equal),.a7(ans_right),.a8(ans_left),.a9(ans_and),.a10(ans_or),.a11(ans_not),.sel(ans_sel),.out(ans));
