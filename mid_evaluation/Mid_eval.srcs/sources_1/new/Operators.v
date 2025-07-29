@@ -131,6 +131,81 @@ module adder_8bit (
 
 endmodule
 
+//unsigned subtractor
+module sub_8bit (
+    input  [7:0] A,
+    input  [7:0] B,
+    output [7:0] Diff,
+    output       Borrow
+);
+    wire [3:0] B_low_comp, B_high_comp;
+    wire [3:0] Sum_low, Sum_high;
+    wire       C4, Cout;
+    
+    // 2's complement of B
+    assign B_low_comp  = ~B[3:0];
+    assign B_high_comp = ~B[7:4];
+
+    // Lower 4 bits: A[3:0] + ~B[3:0] + 1
+    cla4 cla_low (
+        .A(A[3:0]),
+        .B(B_low_comp),
+        .C0(1'b1),         // +1 for 2's complement
+        .S(Sum_low),
+        .C4(C4)
+    );
+
+    // Upper 4 bits: A[7:4] + ~B[7:4] + carry from lower CLA
+    cla4 cla_high (
+        .A(A[7:4]),
+        .B(B_high_comp),
+        .C0(C4),
+        .S(Sum_high),
+        .C4(Cout)
+    );
+
+    assign Diff = {Sum_high, Sum_low};
+    assign Borrow = ~Cout;  // No carry out => borrow occurred
+endmodule
+
+module incrementer_8bit (
+    input  [7:0] A,
+    output [7:0] Result,
+    output       Cout,
+    output       Overflow
+);
+    wire [7:0] One = 8'b00000001;
+
+    adder_subtractor_8bit add1 (
+        .A(A),
+        .B(One),
+        .mode(1'b0),       // mode = 0 for addition
+        .S(Result),
+        .Cout(Cout),
+        .Overflow(Overflow)
+    );
+endmodule
+
+//increment and decrement
+module decrementer_8bit (
+    input  [7:0] A,
+    output [7:0] Result,
+    output       Cout,
+    output       Overflow
+);
+    wire [7:0] One = 8'b00000001;
+
+    adder_subtractor_8bit sub1 (
+        .A(A),
+        .B(One),
+        .mode(1'b1),       // mode = 1 for subtraction
+        .S(Result),
+        .Cout(Cout),
+        .Overflow(Overflow)
+    );
+endmodule
+
+
 //Multiplier
 
 module multiplier (
