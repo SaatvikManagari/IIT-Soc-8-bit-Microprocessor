@@ -109,7 +109,7 @@ module final_out
     input [16:0] sel,
     output [7:0] out
 );
-    wire [7:0] a1_,a2_,a3_,a4_,a5_,a6_,a7_,a8_,a9_,a10_,a11_,a12_,a13_a14_,a15_,ua1_,ua2_, ;
+    wire [7:0] a1_,a2_,a3_,a4_,a5_,a6_,a7_,a8_,a9_,a10_,a11_,a12_,a13_a14_,a15_,ua1_,ua2_ ;
 and_8bit b1(.in(a1),.x(sel[0]),.out(a1_));
 and_8bit b2(.in(a2),.x(sel[1]),.out(a2_));
 and_8bit b3(.in(a3),.x(sel[2]),.out(a3_));
@@ -187,14 +187,14 @@ assign data2_process = data2_and | address_checker;
     wire [16:0] ans_sel;
 //wire signed [7:0] ans_add,ans_sub,ans_mul,ans_div,and_comp,ans_equal,ans_right,ans_left,ans_and,ans_or,ans_not;
     wire [7:0] ans_add,ans_sub,ans_mul,ans_div,ans_comp,ans_equal,ans_aright,ans_aleft,ans_i,ans_d,ans_and,ans_or,ans_not,ans_lright,ans_lleft,ans_uadd,ans_usub;
-    functionselector_8bit data_1(.x(data1),.sel(sel),.a1(add1),.a2(sub1),.a3(mul1),.a4(div1),.a5(comp1),.a6(eq1),.a7(bar1),.a8(bal1),.a9(i1),.a10(d1),.a11(bo1),.a12(ba1),.a13(bn1),.a14(blr1),.a15(bll1).ans(ans_sel));
+    functionselector_8bit data_1(.x(data1),.sel(sel),.a1(add1),.a2(sub1),.a3(mul1),.a4(div1),.a5(comp1),.a6(eq1),.a7(bar1),.a8(bal1),.a9(i1),.a10(d1),.a11(bo1),.a12(ba1),.a13(bn1),.a14(blr1),.a15(bll1),.ans(ans_sel));
     functionselector_8bit data_2(.x(data2_process),.sel(sel),.a1(add2),.a2(sub2),.a3(mul2),.a4(div2),.a5(comp2),.a6(eq2),.a7(bar2),.a8(bal2),.a9(i2),.a10(d2),.a11(bo2),.a12(ba2),.a14(blr2),.a15(bll2));
 
 
 
 adder_subtractor_8bit add(.A(add1),.B(add2),.S(ans_add),.mode(0));
 adder_subtractor_8bit sub(.A(sub1),.B(sub2),.S(ans_sub),.mode(1));
-    adder_8bit uadd(.A(uadd1),.B(uadd2),.S(ans_uadd),.);
+    adder_8bit uadd(.A(uadd1),.B(uadd2),.S(ans_uadd));
     sub_8bit usub(.A(usub1),.B(usub2),.S(ans_usub));
     incrementer_8bit i(.A(i1),.B(i2),.S(ans_i));
     decrement_8bit d(.A(d1),.B(d2),.S(ans_d));
@@ -208,11 +208,11 @@ not_op opnot(.a(bn1),.ans(ans_not));
     logical_left_shift lls(.a(bll1),.b(bll2),.product(ans_lleft));
     logical_right_shift lrs(.a(blr1),.b(blr2),.product(ans_lright));
     arithmetic_left_shift als(.a(bal1),.b(bal2),.product(ans_aleft));
-    arithmetic_right_shift als(.a(bar1),.b(bar2),.product(ans_aright));
+    arithmetic_right_shift ars(.a(bar1),.b(bar2),.product(ans_aright));
 
 
 
-    final_out out_8bit(.a1(ans_add),.a2(ans_sub),.a3(ans_mul),.a4(ans_div),.a5(ans_comp),.a6(ans_equal),.a7(ans_aright),.a8(ans_aleft),.a9(ans_i),.a10(ans_d),.a11(ans_or),.a12(ans_and),.a13(ans_not),.a14(ans_lright),.a15(ans_lleft),.ua1(ans_uadd),.ua2(ans_usub).a.sel(ans_sel),.out(ans));
+    final_out out_8bit(.a1(ans_add),.a2(ans_sub),.a3(ans_mul),.a4(ans_div),.a5(ans_comp),.a6(ans_equal),.a7(ans_aright),.a8(ans_aleft),.a9(ans_i),.a10(ans_d),.a11(ans_or),.a12(ans_and),.a13(ans_not),.a14(ans_lright),.a15(ans_lleft),.ua1(ans_uadd),.ua2(ans_usub),.sel(ans_sel),.out(ans));
 
 
 //wire signed [7:0] ans_add_selected,ans_sub_selected;//,ans_mul_selected,ans_div_selected,and_comp_selected,ans_equal_selected,ans_right_selected,ans_left_selected,ans_and_selected,ans_or_selected,ans_not_selected;
