@@ -29,7 +29,7 @@ module dec1x17(
 assign a1 =x &(sel[0])&(~sel[1])&(~sel[2])&(~sel[3]);
 assign ua1 =x &(sel[0])&(~sel[1])&(~sel[2])&(~sel[3])&(sel[4]);
 assign a2 =x &(~sel[0])&(sel[1])&(~sel[2])&(~sel[3]);
-assign ua2 =x &(sel[0])&(~sel[1])&(~sel[2])&(~sel[3])&(sel[4]);
+assign ua2 =x &(~sel[0])&(sel[1])&(~sel[2])&(~sel[3])&(sel[4]);
 assign a3 =x &(sel[0])&(sel[1])&(~sel[2])&(~sel[3]);
 assign a4 =x &(~sel[0])&(~sel[1])&(sel[2])&(~sel[3]);
 assign a5 =x &(sel[0])&(~sel[1])&(sel[2])&(~sel[3]);
@@ -125,8 +125,8 @@ and_8bit b12(.in(a12),.x(sel[11]),.out(a12_));
 and_8bit b13(.in(a13),.x(sel[12]),.out(a13_));
 and_8bit b14(.in(a14),.x(sel[13]),.out(a14_));
 and_8bit b15(.in(a15),.x(sel[14]),.out(a15_));
-and_8bit b16(.in(a16),.x(sel[15]),.out(a16_));
-and_8bit b17(.in(a17),.x(sel[16]),.out(a17_));
+and_8bit b16(.in(ua1),.x(sel[15]),.out(ua1_));
+and_8bit b17(.in(ua2),.x(sel[16]),.out(ua2_));
 
 assign out = a1_ | a2_ | a3_ | a4_ | a5_ | a6_ | a7_ | a8_ | a9_ | a10_ | a11_| a12_| a13_| a14_| a15_| ua1_| ua2_;
 
@@ -187,8 +187,8 @@ assign data2_process = data2_and | address_checker;
     wire [16:0] ans_sel;
 //wire signed [7:0] ans_add,ans_sub,ans_mul,ans_div,and_comp,ans_equal,ans_right,ans_left,ans_and,ans_or,ans_not;
     wire [7:0] ans_add,ans_sub,ans_mul,ans_div,ans_comp,ans_equal,ans_aright,ans_aleft,ans_i,ans_d,ans_and,ans_or,ans_not,ans_lright,ans_lleft,ans_uadd,ans_usub;
-    functionselector_8bit data_1(.x(data1),.sel(sel),.a1(add1),.a2(sub1),.a3(mul1),.a4(div1),.a5(comp1),.a6(eq1),.a7(bar1),.a8(bal1),.a9(i1),.a10(d1),.a11(bo1),.a12(ba1),.a13(bn1),.a14(blr1),.a15(bll1),.ans(ans_sel));
-    functionselector_8bit data_2(.x(data2_process),.sel(sel),.a1(add2),.a2(sub2),.a3(mul2),.a4(div2),.a5(comp2),.a6(eq2),.a7(bar2),.a8(bal2),.a9(i2),.a10(d2),.a11(bo2),.a12(ba2),.a14(blr2),.a15(bll2));
+    functionselector_8bit data_1(.x(data1),.sel(sel),.a1(add1),.a2(sub1),.a3(mul1),.a4(div1),.a5(comp1),.a6(eq1),.a7(bar1),.a8(bal1),.a9(i1),.a10(d1),.a11(bo1),.a12(ba1),.a13(bn1),.a14(blr1),.a15(bll1),.ua1(uadd1),.ua2(usub1),.ans(ans_sel));
+    functionselector_8bit data_2(.x(data2_process),.sel(sel),.a1(add2),.a2(sub2),.a3(mul2),.a4(div2),.a5(comp2),.a6(eq2),.a7(bar2),.a8(bal2),.a9(i2),.a10(d2),.a11(bo2),.a12(ba2),.a14(blr2),.a15(bll2),.ua1(uadd2),.ua2(usub2));
 
 
 
