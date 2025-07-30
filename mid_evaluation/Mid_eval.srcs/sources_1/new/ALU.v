@@ -196,8 +196,8 @@ adder_subtractor_8bit add(.A(add1),.B(add2),.S(ans_add),.mode(0));
 adder_subtractor_8bit sub(.A(sub1),.B(sub2),.S(ans_sub),.mode(1));
     adder_8bit uadd(.A(uadd1),.B(uadd2),.S(ans_uadd));
     sub_8bit usub(.A(usub1),.B(usub2),.S(ans_usub));
-    incrementer_8bit i(.A(i1),.B(i2),.S(ans_i));
-    decrement_8bit d(.A(d1),.B(d2),.S(ans_d));
+    incrementer_8bit i(.A(i1),.Result(ans_i));
+    decrementer_8bit d(.A(d1),.Result(ans_d));
 multiplier mul(.a(mul1),.b(mul2),.product(ans_mul));
 divider div(.dividend(div1),.divisor(div2),.quotient(ans_div));
 comp comparision(.a(comp1),.b(comp2),.ans(ans_comp));
@@ -205,10 +205,10 @@ eq equalto(.a(eq1),.b(eq2),.ans(ans_equal));
 and_op and_op1(.a(ba1),.b(ba2),.ans(ans_and));
 or_op opor(.a(bo1),.b(bo2),.ans(ans_or));
 not_op opnot(.a(bn1),.ans(ans_not));
-    logical_left_shift lls(.a(bll1),.b(bll2),.product(ans_lleft));
-    logical_right_shift lrs(.a(blr1),.b(blr2),.product(ans_lright));
-    arithmetic_left_shift als(.a(bal1),.b(bal2),.product(ans_aleft));
-    arithmetic_right_shift ars(.a(bar1),.b(bar2),.product(ans_aright));
+    logical_left_shift lls(.data_in(bll1),.data_out(ans_lleft));
+    logical_right_shift lrs(.data_in(blr1),.data_out(ans_lright));
+    arithmetic_left_shift als(.data_in(bal1),.data_out(ans_aleft));
+    arithmetic_right_shift ars(.data_in(bar1),.data_out(ans_aright));
 
 
 
@@ -231,8 +231,3 @@ not_op opnot(.a(bn1),.ans(ans_not));
 //assign ans = ans_add_selected|ans_sub_selected;//|ans_and_selected|ans_or_selected|ans_bl_selected|ans_br_selected|ans_eq_selected|ans_comp_selected|ans_div_selected|ans_mul_selected|ans_sub_selected;
 
 endmodule
-
-
-
-
-
