@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib "C:/Users/Abhisrikarthik/pc_final_ops/pc_final_ops.srcs/sources_1/new/source.v" --include "../../../../pc_final_ops.srcs/sources_1/new" \
+"../../../../pc_final_ops.srcs/sources_1/new/final_pc_ops.v" \
+"../../../../pc_final_ops.srcs/sources_1/new/mem_mod_ops.v" \
+"../../../../pc_final_ops.srcs/sim_1/new/pc_tb_ops.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -1,0 +1,4 @@
+Breakpoint File Version 1.0
+30,true,"C:/Users/Abhisrikarthik/pc_final_ops/pc_final_ops.srcs/sources_1/new/final_pc_ops.v"
+36,true,"C:/Users/Abhisrikarthik/pc_final_ops/pc_final_ops.srcs/sources_1/new/final_pc_ops.v"
+25,true,"C:/Users/Abhisrikarthik/pc_final_ops/pc_final_ops.srcs/sources_1/new/mem_mod_ops.v"
