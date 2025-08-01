@@ -104,7 +104,7 @@ assign opcode= instr_set[7];
 wire [7:0] clk = {8{clk_not}};
 
 always @(posedge clk_not) begin
-#0.02;
+
 alu_loc = instr_set&{8{(~opcode)}};
 alu_addr = addr_set&{8{(~opcode)}};
 lsu_loc = instr_set&{8{(opcode)}};
