@@ -154,4 +154,12 @@ module decoder8x32
 
 endmodule
 
+module mux2x1 (
+    input  wire [7:0] in0,    // Input 0
+    input  wire [7:0] in1,    // Input 1
+    input  wire       sel,    // Select signal
+    output wire [7:0] out     // Output
+);
+    assign out = (sel == 1'b0) ? in0 : in1;
+endmodule
 
