@@ -66,7 +66,7 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="0"/>
+    <Option Name="WTXSimExportSim" Val="1"/>
     <Option Name="WTModelSimExportSim" Val="0"/>
     <Option Name="WTQuestaExportSim" Val="0"/>
     <Option Name="WTIesExportSim" Val="0"/>

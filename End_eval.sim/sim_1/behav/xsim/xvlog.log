@@ -1,0 +1,313 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/source.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module d_flip_flop
+INFO: [VRFC 10-311] analyzing module register_8bit
+INFO: [VRFC 10-311] analyzing module mux4x1
+INFO: [VRFC 10-311] analyzing module mux8x1
+INFO: [VRFC 10-311] analyzing module mux32x8
+INFO: [VRFC 10-311] analyzing module mux64x8
+INFO: [VRFC 10-311] analyzing module mux64x16
+INFO: [VRFC 10-311] analyzing module pipeline
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/source.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module d_flip_flop
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'd_flip_flop' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/source.v:3]
+INFO: [VRFC 10-311] analyzing module register_8bit
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'register_8bit' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/source.v:20]
+INFO: [VRFC 10-311] analyzing module mux4x1
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'mux4x1' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/source.v:42]
+INFO: [VRFC 10-311] analyzing module mux8x1
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'mux8x1' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/source.v:65]
+INFO: [VRFC 10-311] analyzing module mux32x8
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'mux32x8' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/source.v:89]
+INFO: [VRFC 10-311] analyzing module mux64x8
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'mux64x8' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/source.v:108]
+INFO: [VRFC 10-311] analyzing module mux64x16
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'mux64x16' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/source.v:126]
+INFO: [VRFC 10-311] analyzing module pipeline
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'pipeline' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/source.v:138]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module d_flip_flop
+INFO: [VRFC 10-311] analyzing module register_8bit
+INFO: [VRFC 10-311] analyzing module mux4x1
+INFO: [VRFC 10-311] analyzing module mux8x1
+INFO: [VRFC 10-311] analyzing module mux32x8
+INFO: [VRFC 10-311] analyzing module mux64x8
+INFO: [VRFC 10-311] analyzing module mux64x16
+INFO: [VRFC 10-311] analyzing module pipeline
+INFO: [VRFC 10-311] analyzing module divider
+INFO: [VRFC 10-311] analyzing module cla4
+INFO: [VRFC 10-311] analyzing module adder_subtractor_8bit
+INFO: [VRFC 10-311] analyzing module adder_8bit
+INFO: [VRFC 10-311] analyzing module sub_8bit
+INFO: [VRFC 10-311] analyzing module incrementer_8bit
+INFO: [VRFC 10-311] analyzing module decrementer_8bit
+INFO: [VRFC 10-311] analyzing module multiplier
+INFO: [VRFC 10-311] analyzing module comp
+INFO: [VRFC 10-311] analyzing module eq
+INFO: [VRFC 10-311] analyzing module and_op
+INFO: [VRFC 10-311] analyzing module or_op
+INFO: [VRFC 10-311] analyzing module not_op
+INFO: [VRFC 10-311] analyzing module logical_left_shift
+INFO: [VRFC 10-311] analyzing module logical_right_shift
+INFO: [VRFC 10-311] analyzing module arithmetic_left_shift
+INFO: [VRFC 10-311] analyzing module arithmetic_right_shift
+INFO: [VRFC 10-311] analyzing module dec1x17
+INFO: [VRFC 10-311] analyzing module functionselector_8bit
+INFO: [VRFC 10-311] analyzing module and_8bit
+INFO: [VRFC 10-311] analyzing module final_out
+INFO: [VRFC 10-311] analyzing module alu_selector
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/LSU.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module d_flip_flop
+INFO: [VRFC 10-311] analyzing module register_8bit
+INFO: [VRFC 10-311] analyzing module mux4x1
+INFO: [VRFC 10-311] analyzing module mux8x1
+INFO: [VRFC 10-311] analyzing module mux32x8
+INFO: [VRFC 10-311] analyzing module mux64x8
+INFO: [VRFC 10-311] analyzing module mux64x16
+INFO: [VRFC 10-311] analyzing module pipeline
+INFO: [VRFC 10-311] analyzing module conditional_jump
+INFO: [VRFC 10-311] analyzing module memory_to_wr
+INFO: [VRFC 10-311] analyzing module dr_to_memory
+INFO: [VRFC 10-311] analyzing module dr_to_wr
+INFO: [VRFC 10-311] analyzing module initialize_value
+INFO: [VRFC 10-311] analyzing module raw_to_proper
+INFO: [VRFC 10-311] analyzing module d_flip_flop
+INFO: [VRFC 10-311] analyzing module register_8bit
+INFO: [VRFC 10-311] analyzing module mux4x1
+INFO: [VRFC 10-311] analyzing module mux8x1
+INFO: [VRFC 10-311] analyzing module mux32x8
+INFO: [VRFC 10-311] analyzing module mux64x8
+INFO: [VRFC 10-311] analyzing module mux64x16
+INFO: [VRFC 10-311] analyzing module pipeline
+INFO: [VRFC 10-311] analyzing module LSU
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/PC.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module d_flip_flop
+INFO: [VRFC 10-311] analyzing module register_8bit
+INFO: [VRFC 10-311] analyzing module mux4x1
+INFO: [VRFC 10-311] analyzing module mux8x1
+INFO: [VRFC 10-311] analyzing module mux32x8
+INFO: [VRFC 10-311] analyzing module mux64x8
+INFO: [VRFC 10-311] analyzing module mux64x16
+INFO: [VRFC 10-311] analyzing module pipeline
+INFO: [VRFC 10-311] analyzing module counter
+INFO: [VRFC 10-311] analyzing module jump_code
+INFO: [VRFC 10-311] analyzing module program_sorter
+INFO: [VRFC 10-311] analyzing module d_flip_flop
+INFO: [VRFC 10-311] analyzing module register_8bit
+INFO: [VRFC 10-311] analyzing module mux4x1
+INFO: [VRFC 10-311] analyzing module mux8x1
+INFO: [VRFC 10-311] analyzing module mux32x8
+INFO: [VRFC 10-311] analyzing module mux64x8
+INFO: [VRFC 10-311] analyzing module mux64x16
+INFO: [VRFC 10-311] analyzing module pipeline
+INFO: [VRFC 10-311] analyzing module program_counter
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/drop_register.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module d_flip_flop
+INFO: [VRFC 10-311] analyzing module register_8bit
+INFO: [VRFC 10-311] analyzing module mux4x1
+INFO: [VRFC 10-311] analyzing module mux8x1
+INFO: [VRFC 10-311] analyzing module mux32x8
+INFO: [VRFC 10-311] analyzing module mux64x8
+INFO: [VRFC 10-311] analyzing module mux64x16
+INFO: [VRFC 10-311] analyzing module pipeline
+INFO: [VRFC 10-311] analyzing module drop_register
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/lsu_modules.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module d_flip_flop
+INFO: [VRFC 10-311] analyzing module register_8bit
+INFO: [VRFC 10-311] analyzing module mux4x1
+INFO: [VRFC 10-311] analyzing module mux8x1
+INFO: [VRFC 10-311] analyzing module mux32x8
+INFO: [VRFC 10-311] analyzing module mux64x8
+INFO: [VRFC 10-311] analyzing module mux64x16
+INFO: [VRFC 10-311] analyzing module pipeline
+INFO: [VRFC 10-311] analyzing module conditional_jump
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'conditional_jump' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/lsu_modules.v:25]
+INFO: [VRFC 10-311] analyzing module memory_to_wr
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'memory_to_wr' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/lsu_modules.v:44]
+INFO: [VRFC 10-311] analyzing module dr_to_memory
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'dr_to_memory' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/lsu_modules.v:94]
+INFO: [VRFC 10-311] analyzing module dr_to_wr
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'dr_to_wr' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/lsu_modules.v:112]
+INFO: [VRFC 10-311] analyzing module initialize_value
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'initialize_value' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/lsu_modules.v:129]
+INFO: [VRFC 10-311] analyzing module raw_to_proper
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'raw_to_proper' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/lsu_modules.v:145]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/operators.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module d_flip_flop
+INFO: [VRFC 10-311] analyzing module register_8bit
+INFO: [VRFC 10-311] analyzing module mux4x1
+INFO: [VRFC 10-311] analyzing module mux8x1
+INFO: [VRFC 10-311] analyzing module mux32x8
+INFO: [VRFC 10-311] analyzing module mux64x8
+INFO: [VRFC 10-311] analyzing module mux64x16
+INFO: [VRFC 10-311] analyzing module pipeline
+INFO: [VRFC 10-311] analyzing module divider
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'divider' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/operators.v:25]
+INFO: [VRFC 10-311] analyzing module cla4
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'cla4' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/operators.v:37]
+INFO: [VRFC 10-311] analyzing module adder_subtractor_8bit
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'adder_subtractor_8bit' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/operators.v:60]
+INFO: [VRFC 10-311] analyzing module adder_8bit
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'adder_8bit' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/operators.v:103]
+INFO: [VRFC 10-311] analyzing module sub_8bit
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'sub_8bit' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/operators.v:136]
+INFO: [VRFC 10-311] analyzing module incrementer_8bit
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'incrementer_8bit' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/operators.v:172]
+INFO: [VRFC 10-311] analyzing module decrementer_8bit
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'decrementer_8bit' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/operators.v:191]
+INFO: [VRFC 10-311] analyzing module multiplier
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'multiplier' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/operators.v:212]
+INFO: [VRFC 10-311] analyzing module comp
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'comp' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/operators.v:229]
+INFO: [VRFC 10-311] analyzing module eq
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'eq' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/operators.v:240]
+INFO: [VRFC 10-311] analyzing module and_op
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'and_op' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/operators.v:252]
+INFO: [VRFC 10-311] analyzing module or_op
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'or_op' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/operators.v:264]
+INFO: [VRFC 10-311] analyzing module not_op
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'not_op' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/operators.v:274]
+INFO: [VRFC 10-311] analyzing module logical_left_shift
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'logical_left_shift' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/operators.v:283]
+INFO: [VRFC 10-311] analyzing module logical_right_shift
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'logical_right_shift' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/operators.v:299]
+INFO: [VRFC 10-311] analyzing module arithmetic_left_shift
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'arithmetic_left_shift' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/operators.v:315]
+INFO: [VRFC 10-311] analyzing module arithmetic_right_shift
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'arithmetic_right_shift' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/operators.v:331]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/pc_modules.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module d_flip_flop
+INFO: [VRFC 10-311] analyzing module register_8bit
+INFO: [VRFC 10-311] analyzing module mux4x1
+INFO: [VRFC 10-311] analyzing module mux8x1
+INFO: [VRFC 10-311] analyzing module mux32x8
+INFO: [VRFC 10-311] analyzing module mux64x8
+INFO: [VRFC 10-311] analyzing module mux64x16
+INFO: [VRFC 10-311] analyzing module pipeline
+INFO: [VRFC 10-311] analyzing module counter
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'counter' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/pc_modules.v:3]
+INFO: [VRFC 10-311] analyzing module jump_code
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'jump_code' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/pc_modules.v:51]
+INFO: [VRFC 10-311] analyzing module program_sorter
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'program_sorter' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/pc_modules.v:88]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/processor.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module d_flip_flop
+INFO: [VRFC 10-311] analyzing module register_8bit
+INFO: [VRFC 10-311] analyzing module mux4x1
+INFO: [VRFC 10-311] analyzing module mux8x1
+INFO: [VRFC 10-311] analyzing module mux32x8
+INFO: [VRFC 10-311] analyzing module mux64x8
+INFO: [VRFC 10-311] analyzing module mux64x16
+INFO: [VRFC 10-311] analyzing module pipeline
+INFO: [VRFC 10-311] analyzing module d_flip_flop
+INFO: [VRFC 10-311] analyzing module register_8bit
+INFO: [VRFC 10-311] analyzing module mux4x1
+INFO: [VRFC 10-311] analyzing module mux8x1
+INFO: [VRFC 10-311] analyzing module mux32x8
+INFO: [VRFC 10-311] analyzing module mux64x8
+INFO: [VRFC 10-311] analyzing module mux64x16
+INFO: [VRFC 10-311] analyzing module pipeline
+INFO: [VRFC 10-311] analyzing module counter
+INFO: [VRFC 10-311] analyzing module jump_code
+INFO: [VRFC 10-311] analyzing module program_sorter
+INFO: [VRFC 10-311] analyzing module d_flip_flop
+INFO: [VRFC 10-311] analyzing module register_8bit
+INFO: [VRFC 10-311] analyzing module mux4x1
+INFO: [VRFC 10-311] analyzing module mux8x1
+INFO: [VRFC 10-311] analyzing module mux32x8
+INFO: [VRFC 10-311] analyzing module mux64x8
+INFO: [VRFC 10-311] analyzing module mux64x16
+INFO: [VRFC 10-311] analyzing module pipeline
+INFO: [VRFC 10-311] analyzing module program_counter
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'program_counter' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/PC.v:5]
+INFO: [VRFC 10-311] analyzing module d_flip_flop
+INFO: [VRFC 10-311] analyzing module register_8bit
+INFO: [VRFC 10-311] analyzing module mux4x1
+INFO: [VRFC 10-311] analyzing module mux8x1
+INFO: [VRFC 10-311] analyzing module mux32x8
+INFO: [VRFC 10-311] analyzing module mux64x8
+INFO: [VRFC 10-311] analyzing module mux64x16
+INFO: [VRFC 10-311] analyzing module pipeline
+INFO: [VRFC 10-311] analyzing module working_register
+INFO: [VRFC 10-311] analyzing module d_flip_flop
+INFO: [VRFC 10-311] analyzing module register_8bit
+INFO: [VRFC 10-311] analyzing module mux4x1
+INFO: [VRFC 10-311] analyzing module mux8x1
+INFO: [VRFC 10-311] analyzing module mux32x8
+INFO: [VRFC 10-311] analyzing module mux64x8
+INFO: [VRFC 10-311] analyzing module mux64x16
+INFO: [VRFC 10-311] analyzing module pipeline
+INFO: [VRFC 10-311] analyzing module drop_register
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'drop_register' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/drop_register.v:24]
+INFO: [VRFC 10-311] analyzing module d_flip_flop
+INFO: [VRFC 10-311] analyzing module register_8bit
+INFO: [VRFC 10-311] analyzing module mux4x1
+INFO: [VRFC 10-311] analyzing module mux8x1
+INFO: [VRFC 10-311] analyzing module mux32x8
+INFO: [VRFC 10-311] analyzing module mux64x8
+INFO: [VRFC 10-311] analyzing module mux64x16
+INFO: [VRFC 10-311] analyzing module pipeline
+INFO: [VRFC 10-311] analyzing module divider
+INFO: [VRFC 10-311] analyzing module cla4
+INFO: [VRFC 10-311] analyzing module adder_subtractor_8bit
+INFO: [VRFC 10-311] analyzing module adder_8bit
+INFO: [VRFC 10-311] analyzing module sub_8bit
+INFO: [VRFC 10-311] analyzing module incrementer_8bit
+INFO: [VRFC 10-311] analyzing module decrementer_8bit
+INFO: [VRFC 10-311] analyzing module multiplier
+INFO: [VRFC 10-311] analyzing module comp
+INFO: [VRFC 10-311] analyzing module eq
+INFO: [VRFC 10-311] analyzing module and_op
+INFO: [VRFC 10-311] analyzing module or_op
+INFO: [VRFC 10-311] analyzing module not_op
+INFO: [VRFC 10-311] analyzing module logical_left_shift
+INFO: [VRFC 10-311] analyzing module logical_right_shift
+INFO: [VRFC 10-311] analyzing module arithmetic_left_shift
+INFO: [VRFC 10-311] analyzing module arithmetic_right_shift
+INFO: [VRFC 10-311] analyzing module dec1x17
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'dec1x17' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/ALU.v:4]
+INFO: [VRFC 10-311] analyzing module functionselector_8bit
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'functionselector_8bit' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/ALU.v:51]
+INFO: [VRFC 10-311] analyzing module and_8bit
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'and_8bit' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/ALU.v:70]
+INFO: [VRFC 10-311] analyzing module final_out
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'final_out' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/ALU.v:88]
+INFO: [VRFC 10-311] analyzing module alu_selector
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'alu_selector' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/ALU.v:124]
+INFO: [VRFC 10-311] analyzing module d_flip_flop
+INFO: [VRFC 10-311] analyzing module register_8bit
+INFO: [VRFC 10-311] analyzing module mux4x1
+INFO: [VRFC 10-311] analyzing module mux8x1
+INFO: [VRFC 10-311] analyzing module mux32x8
+INFO: [VRFC 10-311] analyzing module mux64x8
+INFO: [VRFC 10-311] analyzing module mux64x16
+INFO: [VRFC 10-311] analyzing module pipeline
+INFO: [VRFC 10-311] analyzing module conditional_jump
+INFO: [VRFC 10-311] analyzing module memory_to_wr
+INFO: [VRFC 10-311] analyzing module dr_to_memory
+INFO: [VRFC 10-311] analyzing module dr_to_wr
+INFO: [VRFC 10-311] analyzing module initialize_value
+INFO: [VRFC 10-311] analyzing module raw_to_proper
+INFO: [VRFC 10-311] analyzing module d_flip_flop
+INFO: [VRFC 10-311] analyzing module register_8bit
+INFO: [VRFC 10-311] analyzing module mux4x1
+INFO: [VRFC 10-311] analyzing module mux8x1
+INFO: [VRFC 10-311] analyzing module mux32x8
+INFO: [VRFC 10-311] analyzing module mux64x8
+INFO: [VRFC 10-311] analyzing module mux64x16
+INFO: [VRFC 10-311] analyzing module pipeline
+INFO: [VRFC 10-311] analyzing module LSU
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'LSU' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/LSU.v:25]
+INFO: [VRFC 10-311] analyzing module processor
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/working_register.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module d_flip_flop
+INFO: [VRFC 10-311] analyzing module register_8bit
+INFO: [VRFC 10-311] analyzing module mux4x1
+INFO: [VRFC 10-311] analyzing module mux8x1
+INFO: [VRFC 10-311] analyzing module mux32x8
+INFO: [VRFC 10-311] analyzing module mux64x8
+INFO: [VRFC 10-311] analyzing module mux64x16
+INFO: [VRFC 10-311] analyzing module pipeline
+INFO: [VRFC 10-311] analyzing module working_register
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'working_register' [D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/working_register.v:23]
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Vivado projects/End_eval/End_eval.srcs/sources_1/new/testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module testbench
