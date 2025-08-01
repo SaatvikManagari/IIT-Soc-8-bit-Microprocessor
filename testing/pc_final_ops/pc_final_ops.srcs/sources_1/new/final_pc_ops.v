@@ -8,7 +8,6 @@ module counter
 );
     
     wire jump_flag = jump_flag_unconditional |jump_flag_conditional;
-    reg halt_counter =0;
     initial begin
     counter_out = 8'b00000000;
     end
