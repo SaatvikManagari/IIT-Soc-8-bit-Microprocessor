@@ -1,9 +1,0 @@
-0.7
-2020.2
-Oct 13 2023
-20:47:58
-C:/Users/Abhisrikarthik/pc_final_ops/pc_final_ops.sim/sim_1/behav/xsim/glbl.v,1697210495,verilog,,,,glbl,,,,,,,,
-C:/Users/Abhisrikarthik/pc_final_ops/pc_final_ops.srcs/sim_1/new/pc_tb_ops.v,1753990689,verilog,,,,program_counter_tb,,,../../../../pc_final_ops.srcs/sources_1/new,,,,,
-C:/Users/Abhisrikarthik/pc_final_ops/pc_final_ops.srcs/sources_1/new/final_pc_ops.v,1753991665,verilog,,C:/Users/Abhisrikarthik/pc_final_ops/pc_final_ops.srcs/sources_1/new/mem_mod_ops.v,,counter;jump_code;program_sorter,,,../../../../pc_final_ops.srcs/sources_1/new,,,,,
-C:/Users/Abhisrikarthik/pc_final_ops/pc_final_ops.srcs/sources_1/new/mem_mod_ops.v,1753990659,verilog,,C:/Users/Abhisrikarthik/pc_final_ops/pc_final_ops.srcs/sim_1/new/pc_tb_ops.v,C:/Users/Abhisrikarthik/pc_final_ops/pc_final_ops.srcs/sources_1/new/final_pc_ops.v;C:/Users/Abhisrikarthik/pc_final_ops/pc_final_ops.srcs/sources_1/new/source.v,program_counter,,,../../../../pc_final_ops.srcs/sources_1/new,,,,,
-C:/Users/Abhisrikarthik/pc_final_ops/pc_final_ops.srcs/sources_1/new/source.v,1753965778,verilog,,C:/Users/Abhisrikarthik/pc_final_ops/pc_final_ops.srcs/sources_1/new/final_pc_ops.v,,d_flip_flop;decoder1x4;decoder8x32;mux32x8;mux4x1;mux64x8;mux8x1;register_8bit,,,../../../../pc_final_ops.srcs/sources_1/new,,,,,
