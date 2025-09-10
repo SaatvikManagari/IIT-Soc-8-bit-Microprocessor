@@ -1,4 +1,4 @@
-# IIT-Soc-8-bit-Microprocessor
+# 8-bit-Microprocessor
 
 The Processor built is based on a custom architecure desgin with a specifically designed ISA of 16 bit.
 
@@ -9,5 +9,5 @@ This processor ia a part of the IIT Indore Techsoc. The processor built in this 
 
 
 ## Introduction
- This processor ia a part of the IIT Indore Techsoc, which is a techincal hackathon which is annually conducted at IIT Indore with problem statements in various domains. The current processor was a problem statement under the electronics domain which involved a pipelined 8-Bit microprocessor.
+This processor ia a part of the IIT Indore Techsoc, which is a techincal hackathon which is annually conducted at IIT Indore with problem statements in various domains. The current processor was a problem statement under the electronics domain which involved a pipelined 8-Bit microprocessor.
 
