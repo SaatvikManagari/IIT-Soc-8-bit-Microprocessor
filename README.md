@@ -10,9 +10,7 @@ This processor ia a part of the IIT Indore Techsoc. The processor built in this 
 
 # IIT‑Soc 8‑bit Microprocessor
 
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Language](https://img.shields.io/badge/Verilog-HDL-orange.svg)](https://www.verilog.com/)
-[![GitHub stars](https://img.shields.io/github/stars/SaatvikManagari/IIT-Soc-8-bit-Microprocessor)](https://github.com/SaatvikManagari/IIT-Soc-8-bit-Microprocessor/stargazers)
 
 **Authors:** Saatvik Managari & Team  
 **Affiliation:** IIT Indore, TechSoc  
