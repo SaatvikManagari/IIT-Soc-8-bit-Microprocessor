@@ -23,7 +23,7 @@ This processor ia a part of the IIT Indore Techsoc. The processor built in this 
 - [Architecture & ISA](#architecture--isa)  
 - [Features](#features)  
 - [Design & Implementation](#design--implementation)  
-- [Getting Started](#getting-started)  
+- [Getting Started](#modules)  
 - [Tools & Technologies](#tools--technologies)  
 - [Directory Structure](#directory-structure)  
 - [Contribution](#contribution)  
