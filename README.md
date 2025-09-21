@@ -143,9 +143,9 @@ This module helps manage all the jump instructions. The conditional jump is proc
 ## Directory Structure
 
 IIT-Soc-8-bit-Microprocessor/
-├── Final_processor/              ← Final Verilog files and top module
-├── mid_evaluation/               ← Intermediate versions
-├── ISA (2).xlsx                  ← Instruction set specification
-├── README.md                     ← Project documentation
-└── Saatvik Managari_Electronics_1.pdf ← Project report
+├── Final_processor/                    ← Final Verilog files and top module
+├── mid_evaluation/                     ← Intermediate versions
+├── ISA (2).xlsx                        ← Instruction set specification
+├── README.md                           ← Project documentation
+└── Saatvik Managari_Electronics_1.pdf  ← Project report
 
