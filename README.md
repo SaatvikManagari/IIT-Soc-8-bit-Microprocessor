@@ -137,4 +137,15 @@ This module is placed in front of the ALU and LSU and houses a master slave regi
 
 ### Jump Module
 
-This module helps manage all the jump instructions. Here the 
+This module helps manage all the jump instructions. The conditional jump is processed in the LSU, and the output is sent to the JUMP module, which then decides the state of jump. In an Unconditional jump, the jump module receives the data immediately from the decode module, and the counter is changed immediately.
+
+
+## Directory Structure
+
+IIT-Soc-8-bit-Microprocessor/
+├── Final_processor/              ← Final Verilog files and top module
+├── mid_evaluation/               ← Intermediate versions
+├── ISA (2).xlsx                  ← Instruction set specification
+├── README.md                     ← Project documentation
+└── Saatvik Managari_Electronics_1.pdf ← Project report
+
