@@ -81,7 +81,7 @@ Special emphasis was given to improving throughput by utilizing the **negative h
 | ALU  | Bitwise Left                      | 0 0           | 0 1 0 0 0      | Working Register 1, Working Register 2, Drop register       |
 | ALU  | Bitwise Or                        | 0 0           | 0 1 0 0 1      | Working Register 1, Working Register 2, Drop register       |
 | ALU  | Bitwise And                       | 0 0           | 0 1 0 1 0      | Working Register 1, Working Register 2, Drop register       |
-| ALU  | Bitwise Not                       | 0 0           | 0 1 0 1 1      | Working Register 1, Drop register                           |
+| ALU  | Bitwise Not                       | 0 0           | 0 1 0 1 1      | Working Register 1, 0 0 0 ,Drop register                    |
 | ALU  | Adding of a constant              | 0 0           | 0 1 1 0 0      | Working Register Address, 8-Bit Number                      |
 | ALU  | subtracting a constant            | 0 0           | 0 1 1 0 1      | Working Register Address, 8-Bit Number                      |
 | ALU  | multiplying a constant            | 0 0           | 0 1 1 1 0      | Working Register Address, 8-Bit Number                      |
@@ -94,7 +94,4 @@ Special emphasis was given to improving throughput by utilizing the **negative h
 | LSU  | Initiate value in a register      | 1 1           | 0 0 0          | Working Register Address, 8-Bit Number                      |
 | LSU  | Conditional Jump                  | 1 1           | 0 0 0          | Register Address, Instruction Address                       |
 | LSU  | Unconditional Jump                | 1 1           | 0 0 1          | Register Address, Instruction Address                       |
-| LSU  | Input                             | 1 1           | 0 1 0          | Register Address                                            |
-| LSU  | Output                            | 1 1           | 0 1 1          | Register Address                                            |
-| LSU  | Halt                              | 1 1           | 1 1 1          | 1                                                           |
 
