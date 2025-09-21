@@ -67,74 +67,37 @@ Special emphasis was given to improving throughput by utilizing the **negative h
 
 ---
 
-## Getting Started
+## ISA
+| UNIT | Operation to be performed          | Function Bits | Operation Bits | Address Bits                                            |
+| ---- | ---------------------------------- | ------------- | -------------- | ------------------------------------------------------- |
+| ALU  | Neutral/Reference code             | 0 0 0 0       | 0 0            | 0 0 0 0 0 0 0 0                                         |
+| ALU  | Add                                | 0 0 0 0       | 0 1            | Working Register 1 / Working Register 2 / Drop register |
+| ALU  | Sub                                | 0 0 0 1       | 0 0            | Working Register 1 / Working Register 2 / Drop register |
+| ALU  | Mul                                | 0 0 0 1       | 0 1            | Working Register 1 / Working Register 2 / Drop register |
+| ALU  | Div                                | 0 0 1 0       | 0 0            | Working Register 1 / Working Register 2 / Drop register |
+| ALU  | Compare (<,>)                      | 0 0 1 0       | 0 1            | Working Register 1 / Working Register 2 / Drop register |
+| ALU  | Compare(==)                        | 0 0 1 1       | 0 0            | Working Register 1 / Working Register 2 / Drop register |
+| ALU  | Bitwise Right                      | 0 0 1 1       | 0 1            | Working Register 1 / X / X / Drop register              |
+| ALU  | Bitwise Left                       | 0 1 0 0       | 0 0            | Working Register 1 / X / X / Drop register              |
+| ALU  | Bitwise Or                         | 0 1 0 0       | 0 1            | Working Register 1 / X / X / Drop register              |
+| ALU  | Bitwise And                        | 0 1 0 1       | 0 1            | Working Register 1 / X / X / Drop register              |
+| ALU  | Bitwise Not                        | 0 1 1 0       | 0 0            | Working Register 1 / X / X / Drop register              |
+| ALU  | Adding a constant                  | 0 1 1 0       | 1 0            | Working Register Address / 8-Bit Number                 |
+| ALU  | Subtracting a constant             | 0 1 1 1       | 1 0            | Working Register Address / 8-Bit Number                 |
+| ALU  | Multiplying a constant             | 0 1 1 1       | 1 1            | Working Register Address / 8-Bit Number                 |
+| ALU  | Dividing a constant                | 1 0 0 0       | 1 0            | Working Register Address / 8-Bit Number                 |
+| ALU  | Comparing with a constant (<,>)    | 1 0 0 0       | 1 1            | Working Register Address / 8-Bit Number                 |
+| ALU  | Comparing with a constant(==)      | 1 0 0 1       | 1 0            | Working Register Address / 8-Bit Number                 |
+| LSU  | Memory to Working Register         | 1 0 0 1       | 0 1            | Register Address / Memory Address                       |
+| LSU  | Drop Register to Memory            | 1 0 1 0       | 0 0            | Register Address / Memory Address                       |
+| LSU  | Drop Register to Working Registers | 1 0 1 0       | 0 1            | Working Register / X / X / Drop register                |
+| LSU  | Initiate value in a register       | 1 0 1 1       | 0 0            | 8-Bit Number                                            |
+| LSU  | Conditional Jump                   | 1 0 1 1       | 1 1            | Instruction Address                                     |
+| LSU  | Unconditional Jump                 | 1 1 0 0       | 1 1            | Instruction Address                                     |
+| LSU  | Input                              | 1 1 0 0       | 0 0            | Register Address                                        |
+| LSU  | Output                             | 1 1 0 1       | 0 0            | Register Address                                        |
+| LSU  | Halt                               | 1 1 1 1       | 1 1            | 1 1 1 1 1 1 1 1                                         |
 
-Follow these steps to run or simulate the processor:
-
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/SaatvikManagari/IIT-Soc-8-bit-Microprocessor.git
-cd IIT-Soc-8-bit-Microprocessor
-
-## Introduction
-2. Review ISA
-
-Open ISA (2).xlsx to understand the instruction set, opcodes, and formats.
-
-3. Simulation / Build
-
-Use any Verilog simulator (e.g., Icarus Verilog, ModelSim, Vivado)
-
-Compile the Verilog modules:
-
-iverilog -o processor_tb Final_processor/*.v
-vvp processor_tb
-
-
-Observe results from the testbench.
-
-4. Programming the Processor
-
-Write assembly programs according to the custom ISA.
-
-Encode manually or via assembler (if available).
-
-Load instructions into instruction memory for execution.
-
-Tools & Technologies
-
-Verilog HDL for hardware design
-
-EDA / Simulation tools: Icarus Verilog, ModelSim, Vivado
-
-Documentation: Excel (ISA (2).xlsx), PDF project report
-
-Version Control: Git / GitHub
-
-Directory Structure
-IIT-Soc-8-bit-Microprocessor/
-├── Final_processor/              ← Final Verilog files and top module
-├── mid_evaluation/               ← Intermediate versions
-├── ISA (2).xlsx                  ← Instruction set specification
-├── README.md                     ← Project documentation
-└── Saatvik Managari_Electronics_1.pdf ← Project report
-
-Contribution
-
-Contributions, bug reports, and suggestions are welcome.
-
-Fork the repository → make changes → submit a pull request.
-
-Maintain module structure, coding conventions, and comments.
-
-Future Work
-
-Develop an assembler / compiler for the ISA.
-
-Enhance pipeline hazard detection and forwarding.
-
-Implement branch prediction for control hazards.
 
 Comprehensive testbench coverage.
 
