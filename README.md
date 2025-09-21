@@ -78,4 +78,64 @@ git clone https://github.com/SaatvikManagari/IIT-Soc-8-bit-Microprocessor.git
 cd IIT-Soc-8-bit-Microprocessor
 
 ## Introduction
+2. Review ISA
 
+Open ISA (2).xlsx to understand the instruction set, opcodes, and formats.
+
+3. Simulation / Build
+
+Use any Verilog simulator (e.g., Icarus Verilog, ModelSim, Vivado)
+
+Compile the Verilog modules:
+
+iverilog -o processor_tb Final_processor/*.v
+vvp processor_tb
+
+
+Observe results from the testbench.
+
+4. Programming the Processor
+
+Write assembly programs according to the custom ISA.
+
+Encode manually or via assembler (if available).
+
+Load instructions into instruction memory for execution.
+
+Tools & Technologies
+
+Verilog HDL for hardware design
+
+EDA / Simulation tools: Icarus Verilog, ModelSim, Vivado
+
+Documentation: Excel (ISA (2).xlsx), PDF project report
+
+Version Control: Git / GitHub
+
+Directory Structure
+IIT-Soc-8-bit-Microprocessor/
+├── Final_processor/              ← Final Verilog files and top module
+├── mid_evaluation/               ← Intermediate versions
+├── ISA (2).xlsx                  ← Instruction set specification
+├── README.md                     ← Project documentation
+└── Saatvik Managari_Electronics_1.pdf ← Project report
+
+Contribution
+
+Contributions, bug reports, and suggestions are welcome.
+
+Fork the repository → make changes → submit a pull request.
+
+Maintain module structure, coding conventions, and comments.
+
+Future Work
+
+Develop an assembler / compiler for the ISA.
+
+Enhance pipeline hazard detection and forwarding.
+
+Implement branch prediction for control hazards.
+
+Comprehensive testbench coverage.
+
+Explore FPGA synthesis and deployment.
