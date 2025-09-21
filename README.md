@@ -138,7 +138,7 @@ This module is placed in front of the ALU and LSU and houses a master slave regi
 
 This module helps manage all the jump instructions. The conditional jump is processed in the LSU, and the output is sent to the JUMP module, which then decides the state of jump. In an Unconditional jump, the jump module receives the data immediately from the decode module, and the counter is changed immediately.
 
-##The Working of the Processor
+## The Working of the Processor
 
 
 
