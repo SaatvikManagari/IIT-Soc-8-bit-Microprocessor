@@ -68,37 +68,33 @@ Special emphasis was given to improving throughput by utilizing the **negative h
 ---
 
 ## ISA
-| UNIT | Operation to be performed          | Function Bits | Operation Bits | Address Bits                                            |
-| ---- | ---------------------------------- | ------------- | -------------- | ------------------------------------------------------- |
-| ALU  | Neutral/Reference code             | 0 0 0 0       | 0 0            | 0 0 0 0 0 0 0 0                                         |
-| ALU  | Add                                | 0 0 0 0       | 0 1            | Working Register 1 / Working Register 2 / Drop register |
-| ALU  | Sub                                | 0 0 0 1       | 0 0            | Working Register 1 / Working Register 2 / Drop register |
-| ALU  | Mul                                | 0 0 0 1       | 0 1            | Working Register 1 / Working Register 2 / Drop register |
-| ALU  | Div                                | 0 0 1 0       | 0 0            | Working Register 1 / Working Register 2 / Drop register |
-| ALU  | Compare (<,>)                      | 0 0 1 0       | 0 1            | Working Register 1 / Working Register 2 / Drop register |
-| ALU  | Compare(==)                        | 0 0 1 1       | 0 0            | Working Register 1 / Working Register 2 / Drop register |
-| ALU  | Bitwise Right                      | 0 0 1 1       | 0 1            | Working Register 1 / X / X / Drop register              |
-| ALU  | Bitwise Left                       | 0 1 0 0       | 0 0            | Working Register 1 / X / X / Drop register              |
-| ALU  | Bitwise Or                         | 0 1 0 0       | 0 1            | Working Register 1 / X / X / Drop register              |
-| ALU  | Bitwise And                        | 0 1 0 1       | 0 1            | Working Register 1 / X / X / Drop register              |
-| ALU  | Bitwise Not                        | 0 1 1 0       | 0 0            | Working Register 1 / X / X / Drop register              |
-| ALU  | Adding a constant                  | 0 1 1 0       | 1 0            | Working Register Address / 8-Bit Number                 |
-| ALU  | Subtracting a constant             | 0 1 1 1       | 1 0            | Working Register Address / 8-Bit Number                 |
-| ALU  | Multiplying a constant             | 0 1 1 1       | 1 1            | Working Register Address / 8-Bit Number                 |
-| ALU  | Dividing a constant                | 1 0 0 0       | 1 0            | Working Register Address / 8-Bit Number                 |
-| ALU  | Comparing with a constant (<,>)    | 1 0 0 0       | 1 1            | Working Register Address / 8-Bit Number                 |
-| ALU  | Comparing with a constant(==)      | 1 0 0 1       | 1 0            | Working Register Address / 8-Bit Number                 |
-| LSU  | Memory to Working Register         | 1 0 0 1       | 0 1            | Register Address / Memory Address                       |
-| LSU  | Drop Register to Memory            | 1 0 1 0       | 0 0            | Register Address / Memory Address                       |
-| LSU  | Drop Register to Working Registers | 1 0 1 0       | 0 1            | Working Register / X / X / Drop register                |
-| LSU  | Initiate value in a register       | 1 0 1 1       | 0 0            | 8-Bit Number                                            |
-| LSU  | Conditional Jump                   | 1 0 1 1       | 1 1            | Instruction Address                                     |
-| LSU  | Unconditional Jump                 | 1 1 0 0       | 1 1            | Instruction Address                                     |
-| LSU  | Input                              | 1 1 0 0       | 0 0            | Register Address                                        |
-| LSU  | Output                             | 1 1 0 1       | 0 0            | Register Address                                        |
-| LSU  | Halt                               | 1 1 1 1       | 1 1            | 1 1 1 1 1 1 1 1                                         |
+| UNIT | Operation to be performed          | Function Bits | Operation Bits | Address Bits                                                |
+|-----_|-----------------------------------|---------------|---------------|-------------------------------------------------------------|
+| ALU  | Neutral Reference code             | 0 0           | 0 0 0 0 0      | 0 0 0 0 0 0 0 0                                             |
+| ALU  | Add                               | 0 0           | 0 0 0 0 1      | Working Register 1, Working Register 2, Drop register       |
+| ALU  | Sub                               | 0 0           | 0 0 0 1 0      | Working Register 1, Working Register 2, Drop register       |
+| ALU  | Mul                               | 0 0           | 0 0 0 1 1      | Working Register 1, Working Register 2, Drop register       |
+| ALU  | Div                               | 0 0           | 0 0 1 0 0      | Working Register 1, Working Register 2, Drop register       |
+| ALU  | Compare (<=)                      | 0 0           | 0 0 1 0 1      | Working Register 1, Working Register 2, Drop register       |
+| ALU  | compare(>=)                       | 0 0           | 0 0 1 1 0      | Working Register 1, Working Register 2, Drop register       |
+| ALU  | Bitwise Right                     | 0 0           | 0 0 1 1 1      | Working Register 1, Working Register 2, Drop register       |
+| ALU  | Bitwise Left                      | 0 0           | 0 1 0 0 0      | Working Register 1, Working Register 2, Drop register       |
+| ALU  | Bitwise Or                        | 0 0           | 0 1 0 0 1      | Working Register 1, Working Register 2, Drop register       |
+| ALU  | Bitwise And                       | 0 0           | 0 1 0 1 0      | Working Register 1, Working Register 2, Drop register       |
+| ALU  | Bitwise Not                       | 0 0           | 0 1 0 1 1      | Working Register 1, Drop register                           |
+| ALU  | Adding of a constant              | 0 0           | 0 1 1 0 0      | Working Register Address, 8-Bit Number                      |
+| ALU  | subtracting a constant            | 0 0           | 0 1 1 0 1      | Working Register Address, 8-Bit Number                      |
+| ALU  | multiplying a constant            | 0 0           | 0 1 1 1 0      | Working Register Address, 8-Bit Number                      |
+| ALU  | dividing a constant               | 0 0           | 0 1 1 1 1      | Working Register Address, 8-Bit Number                      |
+| ALU  | comparing with a constant(==)     | 0 0           | 1 0 0 0 0      | Working Register Address, 8-Bit Number                      |
+| ALU  | comparing with a constant(<=)     | 0 0           | 1 0 0 0 1      | Working Register Address, 8-Bit Number                      |
+| LSU  | Memory to Working Register         | 1 0           | 0 0 0          | Register Address, Memory Address                            |
+| LSU  | Drop Register to Memory            | 1 0           | 0 0 0          | Register Address, Memory Address                            |
+| LSU  | Drop Register to Working Registers | 1 0           | 0 0 1          | Working Register 1, Working Register 2, Drop register       |
+| LSU  | Initiate value in a register       | 1 1           | 0 0 0          | Working Register Address, 8-Bit Number                      |
+| LSU  | Conditional Jump                   | 1 1           | 0 0 0          | Register Address, Instruction Address                       |
+| LSU  | Unconditional Jump                 | 1 1           | 0 0 1          | Register Address, Instruction Address                       |
+| LSU  | Input                              | 1 1           | 0 1 0          | Register Address                                            |
+| LSU  | Output                             | 1 1           | 0 1 1          | Register Address                                            |
+| LSU  | Halt                               | 1 1           | 1 1 1          | 1                                                           |
 
-
-Comprehensive testbench coverage.
-
-Explore FPGA synthesis and deployment.
