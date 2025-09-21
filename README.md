@@ -68,9 +68,9 @@ Special emphasis was given to improving throughput by utilizing the **negative h
 ---
 
 ## ISA
-| UNIT | Operation to be performed          | Function Bits | Operation Bits | Address Bits                                                |
-|-----_|-----------------------------------|---------------|---------------|-------------------------------------------------------------|
-| ALU  | Neutral Reference code             | 0 0           | 0 0 0 0 0      | 0 0 0 0 0 0 0 0                                             |
+| UNIT | Operation to be performed         | Function Bits | Operation Bits | Address Bits                                                |
+|------|-----------------------------------|---------------|----------------|-------------------------------------------------------------|
+| ALU  | Neutral Reference code            | 0 0           | 0 0 0 0 0      | 0 0 0 0 0 0 0 0                                             |
 | ALU  | Add                               | 0 0           | 0 0 0 0 1      | Working Register 1, Working Register 2, Drop register       |
 | ALU  | Sub                               | 0 0           | 0 0 0 1 0      | Working Register 1, Working Register 2, Drop register       |
 | ALU  | Mul                               | 0 0           | 0 0 0 1 1      | Working Register 1, Working Register 2, Drop register       |
@@ -88,13 +88,13 @@ Special emphasis was given to improving throughput by utilizing the **negative h
 | ALU  | dividing a constant               | 0 0           | 0 1 1 1 1      | Working Register Address, 8-Bit Number                      |
 | ALU  | comparing with a constant(==)     | 0 0           | 1 0 0 0 0      | Working Register Address, 8-Bit Number                      |
 | ALU  | comparing with a constant(<=)     | 0 0           | 1 0 0 0 1      | Working Register Address, 8-Bit Number                      |
-| LSU  | Memory to Working Register         | 1 0           | 0 0 0          | Register Address, Memory Address                            |
-| LSU  | Drop Register to Memory            | 1 0           | 0 0 0          | Register Address, Memory Address                            |
-| LSU  | Drop Register to Working Registers | 1 0           | 0 0 1          | Working Register 1, Working Register 2, Drop register       |
-| LSU  | Initiate value in a register       | 1 1           | 0 0 0          | Working Register Address, 8-Bit Number                      |
-| LSU  | Conditional Jump                   | 1 1           | 0 0 0          | Register Address, Instruction Address                       |
-| LSU  | Unconditional Jump                 | 1 1           | 0 0 1          | Register Address, Instruction Address                       |
-| LSU  | Input                              | 1 1           | 0 1 0          | Register Address                                            |
-| LSU  | Output                             | 1 1           | 0 1 1          | Register Address                                            |
-| LSU  | Halt                               | 1 1           | 1 1 1          | 1                                                           |
+| LSU  | Memory to Working Register        | 1 0           | 0 0 0          | Register Address, Memory Address                            |
+| LSU  | Drop Register to Memory           | 1 0           | 0 0 0          | Register Address, Memory Address                            |
+| LSU  | Drop Register to Working Registers| 1 0           | 0 0 1          | Working Register 1, Working Register 2, Drop register       |
+| LSU  | Initiate value in a register      | 1 1           | 0 0 0          | Working Register Address, 8-Bit Number                      |
+| LSU  | Conditional Jump                  | 1 1           | 0 0 0          | Register Address, Instruction Address                       |
+| LSU  | Unconditional Jump                | 1 1           | 0 0 1          | Register Address, Instruction Address                       |
+| LSU  | Input                             | 1 1           | 0 1 0          | Register Address                                            |
+| LSU  | Output                            | 1 1           | 0 1 1          | Register Address                                            |
+| LSU  | Halt                              | 1 1           | 1 1 1          | 1                                                           |
 
