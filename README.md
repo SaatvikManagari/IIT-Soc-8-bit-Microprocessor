@@ -107,7 +107,7 @@ A Register file involving 8 POS-CLK-EDGE D-Registers with a unique 3-bit address
 
 ### Drop Registers
 
-This register file is a 4 NEG-CLK-EDGE D-Registers with a 2-bit unique address. These registers act as a Multi-Accumulator system to avoid data handling hazards. This can receive data only from the ALU.
+This register file is a 4 POS-CLK-EDGE D-Registers with a 2-bit unique address. These registers act as a Multi-Accumulator system to avoid data handling hazards. This can receive data only from the ALU.
 
 ### ALU
 
@@ -119,7 +119,7 @@ This module was designed to handle data transfer and movement between various pl
 
 ### Program Counter
 
-An 8-bit Shift Counter that requests the instruction from the Instruction Memory. The counter is altered using the JUMP instruction and is handled in the JUMP module. This counter counts for both the positive edge and the negative edge of the clk. This helps call the instruction in 2 parts using an 8-bit data channel from the memory in a single clock cycle. This way, we call the function and operation bits together and address bits in the latter half of the clock.
+An 8-bit Shift Counter that requests the instruction from the Instruction Memory. The counter is altered using the JUMP instruction and is handled in the JUMP module. This counter counts for both the positive edge of clk and the positive edge of the clk_not. This helps call the instruction in 2 parts using an 8-bit data channel from the memory in a single clock cycle. This way, we call the function and operation bits together and address bits in the latter half of the clock.
 
 ### Instruction Memory
 
@@ -140,5 +140,9 @@ This module helps manage all the jump instructions. The conditional jump is proc
 
 ## The Working of the Processor
 
+This section is intended to explain to you the basic working of the processor and the data flow in the processor.
 
+The beginning of the processor starts with a clock and its counterpart, clk_not. This clock is designed in such a way that it holds a duty cycle of 42 % out of phase with the original clock. This helps establish a 2-clock system out of one clock. Now, let's dive into the processor. The program starts at the program counter, where the instruction is called upon in 2 parts, 8 bits each. The first 8 bits are called upon the positive edge of the clk and are stored in the instruction memory. Here, 2 tasks undergo simultaneously, the first being the calling of the second, 8 bits of the instruction, and the second is the basic decoding of the instruction. This basic decoding allows the instruction to be directed towards its respective module, where it meets a pipeline module. This module, as already mentioned, is a master slave register system with the master receiving data when clk_not is high and the slave receiving the data from the master at clock high, which acts as the instruction for the corresponding module.
+
+The Instruction is processed in the respective module based on the command sent to it. Initially the data can be loaded into the owrking registers using 2 methods, user input or throught memory both of which are LSU instruction. After setting the required values in the processors, you can 
 
