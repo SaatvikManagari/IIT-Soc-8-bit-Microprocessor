@@ -68,6 +68,9 @@ Special emphasis was given to improving throughput by utilizing the **negative h
 ---
 
 ## ISA
+
+The aforementioned ISA structure is followed throughout the processor
+
 | UNIT | Operation to be performed         | Function Bits | Operation Bits | Address Bits                                                |
 |------|-----------------------------------|---------------|----------------|-------------------------------------------------------------|
 | ALU  | Neutral Reference code            | 0 0           | 0 0 0 0 0      | 0 0 0 0 0 0 0 0                                             |
@@ -95,3 +98,42 @@ Special emphasis was given to improving throughput by utilizing the **negative h
 | LSU  | Conditional Jump                  | 1 1           | 0 0 0          | Register Address, Instruction Address                       |
 | LSU  | Unconditional Jump                | 1 1           | 0 0 1          | Register Address, Instruction Address                       |
 
+
+## Modules
+
+### Working Registers
+
+A Register file involving 8 POS-CLK-EDGE D-Registers with a unique 3-bit address, with the register "000" grounded to have a reference at all states. This Register file can obtain data from memory, user (in the form of a command), and from the drop registers.
+
+### Drop Registers
+
+This register file is a 4 NEG-CLK-EDGE D-Registers with a 2-bit unique address. These registers act as a Multi-Accumulator system to avoid data handling hazards. This can receive data only from the ALU.
+
+### ALU
+
+A custom-built Arithmetic and Logic Unit capable of performing 17 Individual operations in a single clock cycle. These Include ADD, SUB, MUL, DIV, etc.
+
+### LSU
+
+This module was designed to handle data transfer and movement between various places in the processor. It enables connections between Memory, Working Registers, and Drop Registers.
+
+### Program Counter
+
+An 8-bit Shift Counter that requests the instruction from the Instruction Memory. The counter is altered using the JUMP instruction and is handled in the JUMP module. This counter counts for both the positive edge and the negative edge of the clk. This helps call the instruction in 2 parts using an 8-bit data channel from the memory in a single clock cycle. This way, we call the function and operation bits together and address bits in the latter half of the clock.
+
+### Instruction Memory
+
+This stores the instruction in 2 different registers working on alternate clk signals. This allows us to store the function and operation bits first and classify the data in the decode module and then send it to its respective module along with the address bits.
+
+### Decode Module
+
+This module takes the first bit of the ISA to classify the type of instruction and delivers it to its respective location.
+
+
+### Pipeline Module
+
+This module is placed in front of the ALU and LSU and houses a master slave register system in order to hold the information for one clock cycle. This helps avoid any sort of collision of data in the respective module =, also helps prevent loss of instruction as well.
+
+### Jump Module
+
+This module helps manage all the jump instructions. Here the 
