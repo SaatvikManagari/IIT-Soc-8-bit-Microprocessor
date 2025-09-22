@@ -150,3 +150,8 @@ Comprehensive testbench coverage
 
 Explore FPGA synthesis and deployment
 
+## Current Processor Diagram
+
+<img width="1903" height="657" alt="processor_made" src="https://github.com/user-attachments/assets/0bbdffe9-36bc-4a0e-bed1-c20e2d6c4fe5" />
+
+
