@@ -138,11 +138,15 @@ This module is placed in front of the ALU and LSU and houses a master slave regi
 
 This module helps manage all the jump instructions. The conditional jump is processed in the LSU, and the output is sent to the JUMP module, which then decides the state of jump. In an Unconditional jump, the jump module receives the data immediately from the decode module, and the counter is changed immediately.
 
-## The Working of the Processor
+## Future Prospects:
 
-This section is intended to explain to you the basic working of the processor and the data flow in the processor.
+Develop an assembler/compiler for the ISA
 
-The beginning of the processor starts with a clock and its counterpart, clk_not. This clock is designed in such a way that it holds a duty cycle of 42 % out of phase with the original clock. This helps establish a 2-clock system out of one clock. Now, let's dive into the processor. The program starts at the program counter, where the instruction is called upon in 2 parts, 8 bits each. The first 8 bits are called upon the positive edge of the clk and are stored in the instruction memory. Here, 2 tasks undergo simultaneously, the first being the calling of the second, 8 bits of the instruction, and the second is the basic decoding of the instruction. This basic decoding allows the instruction to be directed towards its respective module, where it meets a pipeline module. This module, as already mentioned, is a master slave register system with the master receiving data when clk_not is high and the slave receiving the data from the master at clock high, which acts as the instruction for the corresponding module.
+Enhance pipeline hazard detection and forwarding
 
-The Instruction is processed in the respective module based on the command sent to it. Initially the data can be loaded into the owrking registers using 2 methods, user input or throught memory both of which are LSU instruction. After setting the required values in the processors, you can 
+Implement branch prediction for control hazards
+
+Comprehensive testbench coverage
+
+Explore FPGA synthesis and deployment
 
